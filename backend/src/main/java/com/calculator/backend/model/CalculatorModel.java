@@ -4,7 +4,7 @@ public class CalculatorModel {
 	private Double leftOperand;
 	private Double rightOperand;
 	private Double result;
-	private String operation;
+	private String operation;         
 
 	public CalculatorModel(String operation) {
 		this(0.0d, 0.0d, 0.0d, operation);
