@@ -8,6 +8,12 @@ public class CalculatorModel {
 
 	public CalculatorModel(String operation) {
 		this(0.0d, 0.0d, 0.0d, operation);
+	}  
+
+	public CalculatorModel(Double leftOperand, Double rightOperand, String operation ) {
+		this.leftOperand = leftOperand;
+		this.rightOperand = rightOperand;
+		this.operation = operation;
 	}
 
 	public CalculatorModel(Double leftOperand, Double rightOperand, Double result, String operation) {
