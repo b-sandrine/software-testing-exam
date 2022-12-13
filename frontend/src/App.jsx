@@ -1,32 +1,43 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [value, setValue] = useState('0')
+
+  function handleClick(e) {
+    e.preventDefault()
+    setValue(
+      e.target.value
+    )
+  }
 
   return (
     <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="cont">
+        <div className="calsi">
+          <h1>Calculator</h1>
+          <input type="text" id="inp" placeholder={value} readonly="" className='input'/>
+          <div className="btns">
+            <button onClick={handleClick} value="0">0</button>
+            <button onClick={handleClick} value="1">1</button>
+            <button onClick={handleClick} value="2">2</button>
+            <button onClick={handleClick} value="3">3</button>
+            <button onClick={handleClick} value="4">4</button>
+            <button onClick={handleClick} value="5">5</button>
+            <button onClick={handleClick} value="6">6</button>
+            <button onClick={handleClick} value="7">7</button>
+            <button onClick={handleClick} value="8">8</button>
+            <button onClick={handleClick} value="9">9</button>
+            <button onClick={handleClick} value="+">+</button>
+            <button onClick={handleClick} value="-">-</button>
+            <button onClick={handleClick} value="/">/</button>
+            <button onClick={handleClick} value="*">*</button>
+          </div>
+          <button onClick="exe()">=</button>
+          <button onClick="cancel()">⌫</button>
+          <button onClick="cls()">c</button>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </div>
   )
 }
